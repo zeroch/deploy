@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from reserve import doctorView, patientView
+from reserve import doctorView, patientView, appointmentView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctor/', doctorView.DoctorListView.as_view(), name='doctor'),
     path('doctor/<int:pk>', doctorView.DoctorDetailView.as_view(), name='doctorInfo'),
     path('patient/', patientView.PatientListView.as_view(), name='patient'),
-    path('patient/<int:pk>', patientView.PatientDetailView.as_view(), name='patientInfo')
+    path('patient/<int:pk>', patientView.PatientDetailView.as_view(), name='patientInfo'),
+    path('appointment/', appointmentView.AppointmentListView.as_view(), name='appointment'),
+    path('appointment/<int:pk>', appointmentView.AppointmentDetailView.as_view(), name='appointmentInfo')
 ]
 
