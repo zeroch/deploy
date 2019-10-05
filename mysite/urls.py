@@ -24,6 +24,8 @@ urlpatterns = [
     path('patient/', patientView.PatientListView.as_view(), name='patient'),
     path('patient/<int:pk>', patientView.PatientDetailView.as_view(), name='patientInfo'),
     path('appointment/', appointmentView.AppointmentListView.as_view(), name='appointment'),
-    path('appointment/<int:pk>', appointmentView.AppointmentDetailView.as_view(), name='appointmentInfo')
+    path('appointment/<int:pk>', appointmentView.AppointmentDetailView.as_view(), name='appointmentInfo'),
+    path('appointment/doctor/<int:pk>', appointmentView.getListByDoctor, name='appointmentDoctorList')
+
 ]
 
