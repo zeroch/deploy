@@ -9,14 +9,12 @@ class DoctorSerializer(serializers.ModelSerializer):
 
 class PatientSerializer(serializers.ModelSerializer):
     appointments = serializers.PrimaryKeyRelatedField(many = True, read_only=True)
-
     class Meta:
         model = Patient
         fields = "__all__"
-    
 
 class AppointmentSerializer(serializers.ModelSerializer):
-
+    
     class Meta:
         model = Appointment
-        fields = "__all__"
+        fields = ('doctor','start_time','event_date', 'kind', 'patient')

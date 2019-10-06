@@ -15,12 +15,18 @@ class Patient(models.Model):
     last_name = models.CharField(max_length=255)
 
     created_at = models.DateTimeField(auto_now_add=True)
+    def __unicode__(self):
+        return '%s  %s' % (self.first_name, self.last_name)
 
 class Appointment(models.Model):
-    class AppointmentKind(Enum):
-        NewPatient = 'NP', _('New Patient')
-        FollowUpPatient = 'FU', _('Follow Up')
-    
+    NEWPATIENT = 'N'
+    FOLLOWUP = 'F'
+    APP_KIND = [
+        ('N', 'New Patient'),
+        ('F', 'Follow-up')
+    ]
+    kind = models.CharField(max_length=1,choices=APP_KIND,default=NEWPATIENT)
+
     doctor = models.ForeignKey(Doctor, related_name='appointments', on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, related_name='appointments', on_delete=models.CASCADE)
 
