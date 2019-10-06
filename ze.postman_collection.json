@@ -45,12 +45,26 @@
 			"response": []
 		},
 		{
-			"name": "Get Appointment List For doctor",
+			"name": "Get Appointment List For doctor For day",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"event_date\":\t\"2019-10-06\"\n}"
+				},
 				"url": {
-					"raw": "localhost:8000/appointment/doctor/1",
+					"raw": "localhost:8000/appointment/doctor/7",
 					"host": [
 						"localhost"
 					],
@@ -58,7 +72,7 @@
 					"path": [
 						"appointment",
 						"doctor",
-						"1"
+						"7"
 					]
 				},
 				"description": "test"
@@ -79,7 +93,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"tester\",\n\t\"balance\": 100\n}"
+					"raw": "{\n\t\"first_name\": \"tester\",\n\t\"last_name\" : \"tst\"\n}"
 				},
 				"url": {
 					"raw": "localhost:8000/doctor/",
@@ -110,16 +124,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"tester\"\n}"
+					"raw": "{\n\t\"first_name\": \"tester\",\n\t\"last_name\": \"bot\"\n}"
 				},
 				"url": {
-					"raw": "localhost:8000/doctor/",
+					"raw": "localhost:8000/patient/",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"doctor",
+						"patient",
 						""
 					]
 				},
@@ -141,7 +155,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"doctor\" : 1,\n\t\"patient\": 3,\n\t\"start_time\":\t\"2019-10-04T07:00\",\n\t\"end_time\": \t\"2019-10-04T09:00\"\n}"
+					"raw": "{\n\t\"doctor\" : 7,\n\t\"patient\" : 5,\n\t    \"kind\": \"F\",\n\t\"start_time\":\t\"09:30\",\n\t\"event_date\": \"2019-10-07\"\n}"
 				},
 				"url": {
 					"raw": "localhost:8000/appointment/",
@@ -172,17 +186,17 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+					"raw": "{\n\t\"first_name\": \"test\",\n\t\"last_name\": \"I am bot\"\n}"
 				},
 				"url": {
-					"raw": "localhost:8000/doctor/2",
+					"raw": "localhost:8000/doctor/7",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
 						"doctor",
-						"2"
+						"7"
 					]
 				},
 				"description": "test"
@@ -271,14 +285,14 @@
 					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
 				},
 				"url": {
-					"raw": "localhost:8000/doctor/2",
+					"raw": "localhost:8000/doctor/7",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
 						"doctor",
-						"2"
+						"7"
 					]
 				},
 				"description": "test"
@@ -339,14 +353,14 @@
 					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
 				},
 				"url": {
-					"raw": "localhost:8000/appointment/2",
+					"raw": "localhost:8000/appointment/13",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
 						"appointment",
-						"2"
+						"13"
 					]
 				},
 				"description": "test"
@@ -367,7 +381,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "localhost:8000/doctor/2",
@@ -432,14 +446,14 @@
 					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
 				},
 				"url": {
-					"raw": "localhost:8000/appointment/1",
+					"raw": "localhost:8000/appointment/9",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
 						"appointment",
-						"1"
+						"9"
 					]
 				},
 				"description": "test"
