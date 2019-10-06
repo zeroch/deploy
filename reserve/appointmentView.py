@@ -18,8 +18,8 @@ class AppointmentListView(APIView):
 
 
     def post(self, request, format=None):
-        app_serializer = AppointmentSerializer(data=request.data)
         if isTimeSlotAvailable(request):
+            app_serializer = AppointmentSerializer(data=request.data)
             if app_serializer.is_valid():
                 app_serializer.save()
                 return Response(app_serializer.data, status=status.HTTP_201_CREATED)
@@ -37,9 +37,11 @@ def isTimeSlotAvailable(request):
     new_end = request.data["end_time"]
     print("start: " + new_start +  " end: " + new_end)
     appointments = Appointment.objects.filter(doctor__pk = request.data["doctor"])
-    testing = Appointment.objects.filter(Q(end_time__gt= new_start),  Q(start_time__lt= new_end))
-    print(appointments, testing)
-    return testing.count() < 0
+    print("appointments: ", appointments)
+    print("doctor: ", request.data["doctor"])
+    testing = appointments.filter(Q(end_time__gt= new_start),  Q(start_time__lt= new_end))
+    print(appointments, testing, appointments.count(), testing.count())
+    return testing.count() == 0
     
 
 
