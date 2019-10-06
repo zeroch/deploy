@@ -15,11 +15,11 @@ class PatientListView(APIView):
 
 
     def post(self, request, format=None):
-        doc_serializer = PatientSerializer(data=request.data)
-        if doc_serializer.is_valid():
-            doc_serializer.save()
-            return Response(doc_serializer.data, status=status.HTTP_201_CREATED)
-        return Response(doc_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        patient_serializer = PatientSerializer(data=request.data)
+        if patient_serializer.is_valid():
+            patient_serializer.save()
+            return Response(patient_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(patient_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
 class PatientDetailView(APIView):

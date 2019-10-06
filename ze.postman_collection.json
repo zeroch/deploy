@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "3bd0e223-8fe5-4b06-93b2-2174af9d1ca7",
+		"name": "ze",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Doctor List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/doctor",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"doctor"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get patient List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/patient/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"patient",
+						""
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Appointment List For doctor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/appointment/doctor/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"appointment",
+						"doctor",
+						"1"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Create Doc",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"tester\",\n\t\"balance\": 100\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/doctor/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"doctor",
+						""
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Create patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"tester\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/doctor/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"doctor",
+						""
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Create Appointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"doctor\" : 1,\n\t\"patient\": 3,\n\t\"start_time\":\t\"2019-10-04T07:00\",\n\t\"end_time\": \t\"2019-10-04T09:00\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"appointment",
+						""
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Update doctor info",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/doctor/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"doctor",
+						"2"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Update patient info",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test1\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/patient/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"patient",
+						"1"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Appointment Info",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"start_time\": \"2019-10-04T03:36:02.959571Z\",\n    \"end_time\": \"2019-10-04T04:50:02.959571Z\",\n    \"doctor\": 1,\n    \"patient\": 2\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/appointment/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"appointment",
+						"2"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Doctor info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/doctor/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"doctor",
+						"2"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get patient info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/doctor/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"doctor",
+						"2"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get appointment info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/appointment/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"appointment",
+						"2"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Doctor",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/doctor/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"doctor",
+						"2"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete patient",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/patient/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"patient",
+						"1"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"balance\": -100\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/appointment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"appointment",
+						"1"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		}
+	]
+}
